@@ -17,6 +17,8 @@ class Solution:
         print(z)
         if activation=="sigmoid":
             return np.round(1/(1+np.exp(-z)),5)
+        elif activation=="relu": 
+            return float(np.round(max(0, z),5))
         else:
             return float(np.round(max(0, z),5))
     
