@@ -26,13 +26,13 @@ class Solution:
 
         y_true = np.array(y_true)
         z1=np.dot(x,W1.T)+b1
-        print(z1)
+
         a1=np.maximum(0,z1)
-        print(a1)
+    
         z2=np.dot(a1,W2.T)+b2
         loss=np.mean(np.square(z2-y_true))
 
-        n=len(y_true) if y_true.ndim > 0 else 1
+        n=y_true.size if y_true.ndim > 0 else 1
         dz2=2*(z2-y_true)/n
         dW2 = np.outer(dz2, a1)
         db2 = dz2
