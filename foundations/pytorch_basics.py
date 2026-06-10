@@ -30,7 +30,7 @@ class Solution:
         # Compute Mean Squared Error between prediction and target
         # Use torch.nn.functional.mse_loss(prediction, target)
         loss=torch.nn.functional.mse_loss(prediction, target)
-        return loss
+        return torch.round(loss,decimals=4)
 
 
 
